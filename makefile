@@ -7,7 +7,11 @@ CXXFLAGS=-O2 -std=c++17 -I./src
 LDFLAGS=-lcurl
 
 # C core runtime
-SRC_C=src/main.c src/http.c
+SRC_C=\
+src/main.c \
+src/http.c \
+src/engine.c \
+src/img_backend.c
 
 # C++ engine layer
 SRC_CPP=\
@@ -36,4 +40,7 @@ $(TARGET): $(OBJ_C) $(OBJ_CPP)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f src/*.o $(TARGET)
+	rm -f \
+	src/*.o \
+	src/orchestrator/*.o \
+	$(TARGET)
