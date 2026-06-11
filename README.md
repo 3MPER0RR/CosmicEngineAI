@@ -14,16 +14,24 @@ The architecture is designed around a minimal core engine with pluggable provide
 ## Requirements
 
 System
-clang or gcc
-make
-libcurl
-Python (optional, image pipeline only)
-Python ≥ 3.9
-requests
-pillow
-Configuration
-Groq API Key (required)
 
+clang or gcc
+
+make
+
+libcurl
+
+Python (optional, image pipeline only)
+
+Python ≥ 3.9
+
+requests
+
+pillow
+
+## Configuration
+
+Groq API Key (required)
 
 export HF_TOKEN="hf_Hjxxxxxx" huggingface token
 
