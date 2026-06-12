@@ -33,9 +33,8 @@ pillow
 
 Groq API Key (required)
 
+huggingface token ( required )
+
 export HF_TOKEN="hf_Hjxxxxxx" huggingface token
 
-GROQ_API_KEY=xxx ./llmrt  groq apikey
-
-
-export OLLAMA_API_KEY="apy_key"
+GROQ_API_KEY=xxx ./llmrt 
