@@ -6,7 +6,7 @@ echo "======================"
 
 echo "1) Build C/C++ engine"
 echo "2) Setup Python venv"
-echo "3) Run Python image test"
+echo "3) Run Python image"
 echo "4) Clean build"
 echo "0) Exit"
 
