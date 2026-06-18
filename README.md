@@ -1,15 +1,13 @@
 ## Cosmic Engine
 
-AI runtime written in C/C++ with optional Python tooling for experimental image generation.
+AI runtime written in C/C++ with optional Python tooling for image generation.
 Overview
 Cosmic Engine is a modular AI orchestration runtime designed to unify multiple inference backends under a single C/C++ core.
 It currently supports:
 LLM inference via Groq API
 HTTP backend abstraction layer
-Experimental image generation via Hugging Face FLUX (Python-based)
 Stub interface for local model execution (Ollama integration planned)
 The architecture is designed around a minimal core engine with pluggable providers.
-
 
 ## Requirements
 
