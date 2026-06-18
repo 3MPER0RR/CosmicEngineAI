@@ -35,4 +35,17 @@ huggingface token ( required )
 
 export HF_TOKEN="hf_Hjxxxxxx" huggingface token
 
-GROQ_API_KEY=xxx ./llmrt 
+GROQ_API_KEY=xxx ./llmrt
+
+
+## usage 
+
+./llmrt llm prompt 
+
+image generator new terminal 
+
+use menu.sh setup python venv
+
+source venv venv/bin/activate
+
+python3 run_img.py prompt 
