@@ -1,6 +1,6 @@
 ## Cosmic Engine
 
-A lightweight multi-provider AI runtime written in C/C++ with optional Python tooling for experimental image generation.
+AI runtime written in C/C++ with optional Python tooling for experimental image generation.
 Overview
 Cosmic Engine is a modular AI orchestration runtime designed to unify multiple inference backends under a single C/C++ core.
 It currently supports:
