@@ -1,17 +1,20 @@
 CC=clang
 CXX=clang++
 
-CFLAGS=-O2 -std=c17 -I./src
-CXXFLAGS=-O2 -std=c++17 -I./src
+CFLAGS=-O2 -std=c17 -I./src -I./src/llm
+CXXFLAGS=-O2 -std=c++17 -I./src -I./src/llm
 
 LDFLAGS=-lcurl
+
+TARGET=llmrt
 
 # C core runtime
 SRC_C=\
 src/main.c \
 src/http.c \
 src/engine.c \
-src/img_backend.c
+src/img_backend.c \
+src/llm/stream.c
 
 # C++ engine layer
 SRC_CPP=\
@@ -23,13 +26,12 @@ src/orchestrator/orchestrator.cpp
 
 OBJ_C=$(SRC_C:.c=.o)
 OBJ_CPP=$(SRC_CPP:.cpp=.o)
-
-TARGET=llmrt
+OBJ=$(OBJ_C) $(OBJ_CPP)
 
 all: $(TARGET)
 
-$(TARGET): $(OBJ_C) $(OBJ_CPP)
-	$(CXX) $(OBJ_C) $(OBJ_CPP) $(LDFLAGS) -o $(TARGET)
+$(TARGET): $(OBJ)
+	$(CXX) $(OBJ) -o $(TARGET) $(LDFLAGS)
 
 # compile C
 %.o: %.c
@@ -40,7 +42,4 @@ $(TARGET): $(OBJ_C) $(OBJ_CPP)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f \
-	src/*.o \
-	src/orchestrator/*.o \
-	$(TARGET)
+	rm -f $(OBJ) $(TARGET)
