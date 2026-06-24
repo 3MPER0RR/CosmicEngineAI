@@ -1,26 +1,30 @@
 CC=clang
 CXX=clang++
 
-CFLAGS=-O2 -std=c17 -I./src -I./src/llm
-CXXFLAGS=-O2 -std=c++17 -I./src -I./src/llm
+CFLAGS=-O2 -std=c17 -I./src
+CXXFLAGS=-O2 -std=c++17 -I./src
 
 LDFLAGS=-lcurl
 
 TARGET=llmrt
 
-# C core runtime
+# -------------------------
+# C CORE + PROVIDERS
+# -------------------------
 SRC_C=\
 src/main.c \
 src/http.c \
 src/engine.c \
 src/img_backend.c \
-src/llm/stream.c
+src/telemetry/telemetry.c \
+src/providers/groq/stream.c
 
-# C++ engine layer
+# -------------------------
+# C++ ENGINE LAYER
+# -------------------------
 SRC_CPP=\
 src/bridge.cpp \
 src/backend.cpp \
-src/telemetry.cpp \
 src/probe.cpp \
 src/orchestrator/orchestrator.cpp
 
@@ -28,18 +32,28 @@ OBJ_C=$(SRC_C:.c=.o)
 OBJ_CPP=$(SRC_CPP:.cpp=.o)
 OBJ=$(OBJ_C) $(OBJ_CPP)
 
+# -------------------------
+# BUILD
+# -------------------------
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	$(CXX) $(OBJ) -o $(TARGET) $(LDFLAGS)
 
-# compile C
+# -------------------------
+# C COMPILATION
+# -------------------------
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# compile C++
+# -------------------------
+# C++ COMPILATION
+# -------------------------
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# -------------------------
+# CLEAN
+# -------------------------
 clean:
 	rm -f $(OBJ) $(TARGET)
