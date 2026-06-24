@@ -108,6 +108,12 @@ data: {"id":"chatcmpl..."}
 data: {"choices":[{"delta":{"content":"TCP"}}]}
 data: {"choices":[{"delta":{"content":" is"}}]}
 
+
+
+<img src="screen.png" width="400"/>
+
+
+
 ## Runtime Observability
 
 The runtime exposes low-level metadata during generation:
