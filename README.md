@@ -38,9 +38,95 @@ export HF_TOKEN="hf_Hjxxxxxx" huggingface token
 GROQ_API_KEY=xxx ./llmrt
 
 
+## Features
+
+C/C++ runtime core
+
+Groq API integration
+
+Streaming SSE support
+
+Raw chunk inspection
+
+TTFB latency metrics
+
+Token usage estimation
+
+Multi-provider architecture
+
+Python image generation support
+
+HuggingFace integration
+
+Ollama-compatible architecture
+
+Modular backend design
+
+
+## Current Providers
+
+Text Providers
+
+Groq
+
+Ollama (planned / partial integration)
+
+OpenRouter (planned)
+
+Gemini (experimental)
+
+## Image Providers
+
+HuggingFace Inference API
+
+
+## Streaming Engine
+
+CosmicEngineAI includes a real-time streaming runtime for observing LLM responses at transport level.
+
+The engine currently supports:
+
+Server-Sent Events (SSE)
+
+Raw JSON chunk inspection
+
+Delta content extraction
+
+TTFB measurement
+
+Runtime telemetry
+
+Token estimation
+
+Example stream output:
+
+[stream]
+
+[TTFB: 113 ms]
+
+data: {"id":"chatcmpl..."}
+data: {"choices":[{"delta":{"content":"TCP"}}]}
+data: {"choices":[{"delta":{"content":" is"}}]}
+
+## Runtime Observability
+
+The runtime exposes low-level metadata during generation:
+
+model identifiers
+
+request ids
+
+timing information
+
+chunk stream visibility
+
+estimated token usage
+
+This allows inspection of provider behavior and streaming performance directly from terminal.
+
 ## usage 
 
-./llmrt llm prompt 
+GROQ_API_KEY=xxx ./llmrt llm prompt 
 
 image generator new terminal 
 
