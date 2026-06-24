@@ -100,13 +100,14 @@ Token estimation
 
 Example stream output:
 
-[stream]
+[stream] ciao
 
-[TTFB: 113 ms]
+[TTFB: 135 ms]
 
-data: {"id":"chatcmpl..."}
-data: {"choices":[{"delta":{"content":"TCP"}}]}
-data: {"choices":[{"delta":{"content":" is"}}]}
+Cdata: {"id":"chatcmpl-e0730bb5-ab01-4cf6-8bbe-c32c9d7871f5","object":"chat.completion.chunk","created":1782289934,"model":"llama-3.3-70b-versatile","system_fingerprint":"fp_f8b414701e","choices":[{"index":0,"delta":{"content":"iao"},"logprobs":null,"finish_reason":null}]}
+
+
+ Come posdata: {"id":"chatcmpl-e0730bb5-ab01-4cf6-8bbe-c32c9d7871f5","object":"chat.completion.chunk","created":1782289934,"model":"llama-3.3-70b-versatile","system_fingerprint":"fp_f8b414701e","choices":[{"index":0,"delta":{"content":"so"},"logprobs":null,"finish_reason":null}]}
 
 
 
