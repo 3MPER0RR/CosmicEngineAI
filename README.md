@@ -50,8 +50,6 @@ Raw chunk inspection
 
 TTFB latency metrics
 
-Token usage estimation
-
 Multi-provider architecture
 
 Python image generation support
@@ -96,18 +94,16 @@ TTFB measurement
 
 Runtime telemetry
 
-Token estimation
-
 Example stream output:
 
 [stream] ciao
 
 [TTFB: 135 ms]
 
-Cdata: {"id":"chatcmpl-e0730bb5-ab01-4cf6-8bbe-c32c9d7871f5","object":"chat.completion.chunk","created":1782289934,"model":"llama-3.3-70b-versatile","system_fingerprint":"fp_f8b414701e","choices":[{"index":0,"delta":{"content":"iao"},"logprobs":null,"finish_reason":null}]}
+data: {"id":"chatcmpl-e0730bb5-ab01-4cf6-8bbe-c32c9d7871f5","object":"chat.completion.chunk","created":1782289934,"model":"llama-3.3-70b-versatile","system_fingerprint":"fp_f8b414701e","choices":[{"index":0,"delta":{"content":"iao"},"logprobs":null,"finish_reason":null}]}
 
 
- Come posdata: {"id":"chatcmpl-e0730bb5-ab01-4cf6-8bbe-c32c9d7871f5","object":"chat.completion.chunk","created":1782289934,"model":"llama-3.3-70b-versatile","system_fingerprint":"fp_f8b414701e","choices":[{"index":0,"delta":{"content":"so"},"logprobs":null,"finish_reason":null}]}
+data: {"id":"chatcmpl-e0730bb5-ab01-4cf6-8bbe-c32c9d7871f5","object":"chat.completion.chunk","created":1782289934,"model":"llama-3.3-70b-versatile","system_fingerprint":"fp_f8b414701e","choices":[{"index":0,"delta":{"content":"so"},"logprobs":null,"finish_reason":null}]}
 
 
 
@@ -126,8 +122,6 @@ request ids
 timing information
 
 chunk stream visibility
-
-estimated token usage
 
 This allows inspection of provider behavior and streaming performance directly from terminal.
 
