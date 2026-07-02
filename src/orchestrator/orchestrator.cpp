@@ -103,7 +103,7 @@ const char* orchestrate_text_prompt(const char* input)
         payload,
         sizeof(payload),
         "{"
-        "\"model\":\"llama-3.3-70b-versatile\","
+        "\"model\":\"openai/gpt-oss-120b\","
         "\"messages\":["
         "{"
         "\"role\":\"user\","
